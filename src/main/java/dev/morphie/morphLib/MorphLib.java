@@ -1,5 +1,7 @@
 package dev.morphie.morphLib;
 
+import dev.morphie.morphLib.string.Colorize;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MorphLib extends JavaPlugin {
@@ -9,6 +11,8 @@ public final class MorphLib extends JavaPlugin {
     @Override
     public void onEnable() {
         Version = this.getDescription().getVersion();
+        Bukkit.getConsoleSender().sendMessage(new Colorize().addColor("&9ᴍᴏʀᴘʜ&3ʟɪʙ &7➛ &aPlugin Enabled!"));
+        Bukkit.getConsoleSender().sendMessage(new Colorize().addColor("&3ᴠᴇʀꜱɪᴏɴ&7: &a" + Version));
     }
 
     @Override
