@@ -4,14 +4,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MorphLib extends JavaPlugin {
 
+    public String Version;
+
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
+        Version = this.getDescription().getVersion();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
     }
 }
