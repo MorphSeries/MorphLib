@@ -1,0 +1,6 @@
+name: MorphLib
+version: '1.0.0'
+main: dev.morphie.morphLib.MorphLib
+api-version: '1.21'
+authors: [ Morphie ]
+description: A Minecraft plugin that allows setting of item names and lore.
