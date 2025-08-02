@@ -1,4 +1,4 @@
-package dev.morphie.morphLib.string;
+package dev.morphie.morphLib.utils;
 
 import org.bukkit.ChatColor;
 

@@ -15,9 +15,6 @@ public class ItemMaker {
         ItemMeta meta = item.getItemMeta();
         meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ATTRIBUTES });
         meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_DESTROYS });
-        meta.setDisplayName(name);
-        meta.setLore(lore);
-        meta.setCustomModelData(modelid);
         if (glow) {
             meta.addEnchant(Enchantment.UNBREAKING, 1, true);
             meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
@@ -25,6 +22,9 @@ public class ItemMaker {
         if (unbreakable) {
             meta.setUnbreakable(true);
         }
+        meta.setDisplayName(name);
+        meta.setLore(lore);
+        meta.setCustomModelData(modelid);
         item.setItemMeta(meta);
         return item;
     }

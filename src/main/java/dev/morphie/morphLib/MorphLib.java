@@ -1,6 +1,6 @@
 package dev.morphie.morphLib;
 
-import dev.morphie.morphLib.string.Colorize;
+import dev.morphie.morphLib.utils.Colorize;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
