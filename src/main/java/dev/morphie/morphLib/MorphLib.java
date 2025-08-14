@@ -1,5 +1,6 @@
 package dev.morphie.morphLib;
 
+import de.tr7zw.changeme.nbtapi.NBT;
 import dev.morphie.morphLib.utils.Colorize;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -13,6 +14,11 @@ public final class MorphLib extends JavaPlugin {
         Version = this.getDescription().getVersion();
         Bukkit.getConsoleSender().sendMessage(new Colorize().addColor("&9ᴍᴏʀᴘʜ&3ʟɪʙ &7➛ &aPlugin Enabled!"));
         Bukkit.getConsoleSender().sendMessage(new Colorize().addColor("&3ᴠᴇʀꜱɪᴏɴ&7: &a" + Version));
+        if (!NBT.preloadApi()) {
+            getLogger().warning("NBT-API wasn't initialized properly, disabling the plugin");
+            this.getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
     }
 
     @Override

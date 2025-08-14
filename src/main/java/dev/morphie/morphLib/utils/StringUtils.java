@@ -1,7 +1,7 @@
 package dev.morphie.morphLib.utils;
 
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 import org.bukkit.entity.Player;
 
 public class StringUtils {
@@ -14,6 +14,7 @@ public class StringUtils {
     }
 
     public void ActionBar (String message, Player player ) {
-        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new ComponentBuilder(message).create());
+        final TextComponent component = Component.text(message);
+        player.sendActionBar(component);
     }
 }

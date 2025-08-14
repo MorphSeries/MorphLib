@@ -1,7 +1,7 @@
 package dev.morphie.morphLib.itemstack;
 
-import de.tr7zw.nbtapi.NBTCompound;
-import de.tr7zw.nbtapi.NBTItem;
+import de.tr7zw.changeme.nbtapi.NBTCompound;
+import de.tr7zw.changeme.nbtapi.NBTItem;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
@@ -19,9 +19,9 @@ public class ItemMaker {
         if (material.equals(Material.PLAYER_HEAD)) {
             SkullMeta meta = (SkullMeta) item.getItemMeta();
             meta.setOwner(p.getName());
-            meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ATTRIBUTES });
-            meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_DESTROYS });
-            meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
+            meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+            meta.addItemFlags(ItemFlag.HIDE_DESTROYS);
+            meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             if (glow) {
                 meta.addEnchant(Enchantment.UNBREAKING, 1, true);
                 meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
@@ -29,24 +29,22 @@ public class ItemMaker {
             if (unbreakable) {
                 meta.setUnbreakable(true);
             }
-            meta.setHideTooltip(true);
             meta.setDisplayName(name);
             meta.setLore(lore);
             meta.setCustomModelData(modelid);
             item.setItemMeta(meta);
         } else {
             ItemMeta meta = item.getItemMeta();
-            meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ATTRIBUTES });
-            meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_DESTROYS });
-            meta.addItemFlags(new ItemFlag[]{ItemFlag.HIDE_ADDITIONAL_TOOLTIP});
+            meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
+            meta.addItemFlags(ItemFlag.HIDE_DESTROYS);
+            meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             if (glow) {
                 meta.addEnchant(Enchantment.UNBREAKING, 1, true);
-                meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
+                meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             }
             if (unbreakable) {
                 meta.setUnbreakable(true);
             }
-            meta.setHideTooltip(true);
             meta.setDisplayName(name);
             meta.setLore(lore);
             meta.setCustomModelData(modelid);
@@ -56,7 +54,6 @@ public class ItemMaker {
                 NBTCompound comp = nbtItem.addCompound(nbt);
                 return nbtItem.getItem();
             }
-
         }
         return item;
     }
