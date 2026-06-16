@@ -1,5 +1,7 @@
 package dev.morphie.morphLib.utils;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.ChatColor;
 
 import java.util.regex.Matcher;
@@ -29,5 +31,10 @@ public class Colorize {
             );
         }
         return matcher.appendTail(buffer).toString();
+    }
+
+    public Component miniMessage(String message) {
+        MiniMessage mm = MiniMessage.miniMessage();
+        return mm.deserialize(message);
     }
 }
