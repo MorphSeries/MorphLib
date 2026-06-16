@@ -24,7 +24,7 @@ public class ItemMaker {
             meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
             if (glow) {
                 meta.addEnchant(Enchantment.UNBREAKING, 1, true);
-                meta.addItemFlags(new ItemFlag[] { ItemFlag.HIDE_ENCHANTS });
+                meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             }
             if (unbreakable) {
                 meta.setUnbreakable(true);
@@ -51,7 +51,7 @@ public class ItemMaker {
             item.setItemMeta(meta);
             if (nbt != null) {
                 NBTItem nbtItem = new NBTItem(item);
-                NBTCompound comp = nbtItem.addCompound(nbt);
+                nbtItem.addCompound(nbt);
                 return nbtItem.getItem();
             }
         }

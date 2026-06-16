@@ -17,7 +17,6 @@ public final class MorphLib extends JavaPlugin {
         if (!NBT.preloadApi()) {
             getLogger().warning("NBT-API wasn't initialized properly, disabling the plugin");
             this.getServer().getPluginManager().disablePlugin(this);
-            return;
         }
     }
 
