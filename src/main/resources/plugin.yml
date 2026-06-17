@@ -1,5 +1,5 @@
 name: MorphLib
-version: '1.0.2'
+version: '1.0.3'
 main: dev.morphie.morphLib.MorphLib
 api-version: '1.21'
 authors: [ Morphie ]
